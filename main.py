@@ -4,14 +4,16 @@ import keyboard
 import time
 import asyncio
 
-client = TikTokLiveClient(unique_id="@rqinizkx21551")
+client = TikTokLiveClient(unique_id="@pablo040120")
+
+key_events = {"up", "down", "left", "right"}
 
 
 @client.on("comment")
 async def on_comment(event: CommentEvent):
     try:
         keypress = event.comment.lower()
-        if keypress == "up" or keypress == "down" or keypress == "left" or keypress == "right":
+        if keypress in key_events:
             keyboard.press(keypress)
             print(f"{event.user.nickname} -> {event.comment}")
     except Exception as err:
