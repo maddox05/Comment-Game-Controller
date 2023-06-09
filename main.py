@@ -4,12 +4,13 @@ import keyboard
 import time
 import asyncio
 
-client = TikTokLiveClient(unique_id="@pablo040120")
+tiktok_username = input("Type your username (staring with @): ")
+tiktok_client = TikTokLiveClient(unique_id=tiktok_username)
 
 key_events = {"up", "down", "left", "right"}
 
 
-@client.on("comment")
+@tiktok_client.on("comment")
 async def on_comment(event: CommentEvent):
     try:
         keypress = event.comment.lower()
@@ -23,4 +24,4 @@ async def on_comment(event: CommentEvent):
 
 
 if __name__ == "__main__":
-    client.run()
+    tiktok_client.run()
