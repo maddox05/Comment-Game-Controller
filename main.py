@@ -15,7 +15,7 @@ async def on_comment(event: CommentEvent):
             keyboard.press(keypress)
             print(f"{event.user.nickname} -> {event.comment}")
     except Exception as err:
-        print(f"{err} Quitting now")
+        print(f"{err}\n Quitting now")
         time.sleep(4)
         quit()
 
