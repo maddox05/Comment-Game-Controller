@@ -50,4 +50,3 @@ if __name__ == "__main__":
     thread1.start()
     tiktok_client.run()
 
-# add ability to merge tiktok and youtube comments into one.
