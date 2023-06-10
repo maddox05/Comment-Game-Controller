@@ -1,7 +1,7 @@
 # YouTube and TikTok Comment Game Controller
 This Python script allows you to control games, such as Pokemon, using comments from YouTube and TikTok videos. It captures the comments from both platforms and maps them to keypresses that are then used to control the game.
 
-Prerequisites
+## Prerequisites
 * Python 3.6 or higher
 * keyboard library (install using pip install keyboard)
 * TikTokLive library (install using pip install TikTokLive)
