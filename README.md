@@ -24,7 +24,6 @@ This Python script allows you to control games, such as Pokemon, using comments 
 * The script uses the keyboard library to simulate keypresses. Ensure that the game you want to control is compatible with keypress inputs.
 * The script utilizes the TikTokLive library to capture TikTok comments and the pytchat library to capture YouTube comments.
 * Comments containing the specified key events ("up", "down", "left", "right", "a", "b") will be detected and used for game control.
-* To stop the script, press Ctrl + C in the terminal or console window where the script is running.
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
