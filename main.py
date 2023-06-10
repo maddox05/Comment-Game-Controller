@@ -5,16 +5,10 @@ from TikTokLive.types.events import CommentEvent
 import pytchat
 import threading
 
-tiktok_username = input("Type your username: ")
-tiktok_client = TikTokLiveClient(unique_id="@" + tiktok_username)
-
-yt_url = input("Type your video url (end id): ")
-yt_chat = pytchat.create(video_id=yt_url)
-
 key_events = {"up", "down", "left", "right", "a", "b"}
 
 
-@tiktok_client.on("comment")
+# @tiktok_client.on("comment")
 async def on_ttcomment(event: CommentEvent):
     try:
         keypress = event.comment.lower()
@@ -46,7 +40,18 @@ def on_ytcomment():
 
 
 if __name__ == "__main__":
-    thread1 = threading.Thread(target=on_ytcomment())
-    thread1.start()
-    tiktok_client.run()
+    choice_tt = input("Would you like to stream to tiktok? Y/N: ")
+    choice_yt = input("Would you like to stream to youtube? Y/N: ")
+    if choice_tt.lower() == "y":
+        tiktok_username = input("Paste your TIKTOK username: ")
+        tiktok_client = TikTokLiveClient(unique_id="@" + tiktok_username)
+        on_ttcomment = tiktok_client.on("comment")(on_ttcomment)
+        tiktok_client.run()
+    if choice_yt.lower() == "y":
+        yt_url_full = input("Type your video url: ")
+        head, sep, yt_id = yt_url_full.partition('=')
+        yt_chat = pytchat.create(video_id=yt_id)
+        thread1 = threading.Thread(target=on_ytcomment())
+        thread1.start()
 
+    # have log.txt files
