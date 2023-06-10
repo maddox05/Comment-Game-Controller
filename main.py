@@ -25,14 +25,14 @@ async def on_ttcomment(event: CommentEvent):
 
 def on_ytcomment():
     while yt_chat.is_alive():
-        for i in yt_chat.get().sync_items():
+        for event in yt_chat.get().sync_items():
             try:
-                keypress = i.message.lower()
+                keypress = event.message.lower()
                 if keypress in key_events:
                     keyboard.press(keypress)
                     time.sleep(.3)  # await asyncio.sleep(.3)
                     keyboard.release(keypress)
-                print(f"{i.author.name} -> {i.message}")
+                print(f"{event.author.name} -> {event.message}")
             except Exception as err:
                 print(f"{err}\n Quitting now")
                 time.sleep(4)
