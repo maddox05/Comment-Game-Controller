@@ -5,7 +5,7 @@ from TikTokLive.types.events import CommentEvent
 import pytchat
 import threading
 
-key_events = {"up", "down", "left", "right", "a", "b"}
+key_events = {"up", "down", "left", "right", "a", "b", "x", "y"}
 
 
 # @tiktok_client.on("comment")
@@ -16,7 +16,7 @@ async def on_ttcomment(event: CommentEvent):
             keyboard.press(keypress)
             time.sleep(.3)  # await asyncio.sleep(.3)
             keyboard.release(keypress)
-            print(f"{event.user.nickname} -> {event.comment}")
+        print(f"{event.user.nickname} -> {event.comment}")
     except Exception as err:
         print(f"{err}\n Quitting now")
         time.sleep(4)
@@ -32,7 +32,7 @@ def on_ytcomment():
                     keyboard.press(keypress)
                     time.sleep(.3)  # await asyncio.sleep(.3)
                     keyboard.release(keypress)
-                    print(f"{i.author.name} -> {i.message}")
+                print(f"{i.author.name} -> {i.message}")
             except Exception as err:
                 print(f"{err}\n Quitting now")
                 time.sleep(4)
