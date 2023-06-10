@@ -1,8 +1,7 @@
+import time
+import keyboard
 from TikTokLive import TikTokLiveClient
 from TikTokLive.types.events import CommentEvent
-import keyboard
-import time
-import asyncio
 
 tiktok_username = input("Type your username: ")
 tiktok_client = TikTokLiveClient(unique_id="@" + tiktok_username)
