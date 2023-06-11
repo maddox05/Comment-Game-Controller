@@ -16,6 +16,7 @@ async def on_ttcomment(event: CommentEvent):
             keyboard.press(keypress)
             time.sleep(.3)  # await asyncio.sleep(.3)
             keyboard.release(keypress)
+            log_file.write(f"{event.author.name} -> {event.message}\n")
         print(f"{event.user.nickname} -> {event.comment}")
     except Exception as err:
         print(f"{err}\n Quitting now")
@@ -32,6 +33,7 @@ def on_ytcomment():
                     keyboard.press(keypress)
                     time.sleep(.3)  # await asyncio.sleep(.3)
                     keyboard.release(keypress)
+                    log_file.write(f"{event.author.name} -> {event.message}\n")
                 print(f"{event.author.name} -> {event.message}")
             except Exception as err:
                 print(f"{err}\n Quitting now")
@@ -40,6 +42,8 @@ def on_ytcomment():
 
 
 if __name__ == "__main__":
+    log_file = open("log.txt", 'a')
+    log_file.write("Opened\n")
     choice_tt = input("Would you like to stream to tiktok? Y/N: ")
     choice_yt = input("Would you like to stream to youtube? Y/N: ")
     if choice_tt.lower() == "y":
