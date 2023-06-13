@@ -16,7 +16,7 @@ async def on_ttcomment(event: CommentEvent):
             keyboard.press(keypress)
             time.sleep(.3)  # await asyncio.sleep(.3)
             keyboard.release(keypress)
-            log_file.write(f"{event.author.name} -> {event.message}\n")
+            log_file.write(f"{event.user.nickname} -> {event.comment}\n")
         print(f"{event.user.nickname} -> {event.comment}")
     except Exception as err:
         print(f"{err}\n Quitting now")
@@ -50,12 +50,14 @@ if __name__ == "__main__":
         tiktok_username = input("Paste your TIKTOK username: ")
         tiktok_client = TikTokLiveClient(unique_id="@" + tiktok_username)
         on_ttcomment = tiktok_client.on("comment")(on_ttcomment)
+        print("connected")
         tiktok_client.run()
     if choice_yt.lower() == "y":
         yt_url_full = input("Type your video url: ")
         head, sep, yt_id = yt_url_full.partition('=')
         yt_chat = pytchat.create(video_id=yt_id)
         thread1 = threading.Thread(target=on_ytcomment())
+        print("connected")
         thread1.start()
 
-    # have log.txt files
+
