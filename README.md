@@ -35,3 +35,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 This script is provided as-is, without any warranty or guarantee. Use it at your own risk. The author is not responsible for any damages or consequences caused by using this script.
 
 **Note:** Please ensure that you comply with the terms of service of YouTube and TikTok when using this script.
+
