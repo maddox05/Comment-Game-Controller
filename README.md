@@ -29,7 +29,7 @@ This Python script allows you to control games, such as Pokemon, using comments 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-**MIT**
+[**Apache License 2.0**](LICENSE)
 
 ## Disclaimer
 This script is provided as-is, without any warranty or guarantee. Use it at your own risk. The author is not responsible for any damages or consequences caused by using this script.
