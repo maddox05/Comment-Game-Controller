@@ -49,4 +49,4 @@ def detect_language(comment):
         if comment in key:
             return "portuguese"
     else:
-        return "english"  # Use english <3 as the default if no language is detected
+        return "error"  # Use english <3 as the default if no language is detected
